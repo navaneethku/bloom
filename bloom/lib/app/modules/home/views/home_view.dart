@@ -8,22 +8,42 @@ import '../controllers/home_controller.dart';
 class HomeView extends GetView<HomeController> {
   final List<Widget> myChats = List.generate(
     20,
-    (index) => ListTile(
-      onTap: () => Get.toNamed(Routes.CHAT_ROOM),
-      leading: CircleAvatar(
-        radius: 30,
-        backgroundColor: Colors.black26,
-        child: Image.asset("assets/images/noimage.png"),
+    (index) => Padding(
+      padding: EdgeInsets.all(10),
+      child: Card(
+        shape: RoundedRectangleBorder(
+            borderRadius: const BorderRadius.all(Radius.circular(24))),
+        child: Padding(
+          padding: EdgeInsets.all(5),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset(
+                "assets/images/noimage.png",
+                width: 100,
+                height: 100,
+              ),
+              Text("John Doe"),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                Text("Chat"),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Icon(
+                        Icons.circle_rounded,
+                        color: Colors.green,
+                        size: 15,
+                      ),
+                      Text(
+                        "Online",
+                        style: TextStyle(color: Colors.green),
+                      )
+                    ])
+              ])
+            ],
+          ),
+        ),
       ),
-      title: Text(
-        "Chat No ${index + 1}",
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-      ),
-      subtitle: Text(
-        "Chat No ${index + 1}",
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-      ),
-      trailing: Chip(label: Text("3")),
     ),
   ).reversed.toList();
   HomeView({Key? key}) : super(key: key);
@@ -33,46 +53,41 @@ class HomeView extends GetView<HomeController> {
       body: SafeArea(
         child: Column(
           children: [
-            Material(
-              elevation: 5,
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(color: Colors.black38),
-                  ),
-                ),
-                padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Chats",
-                        style: TextStyle(
-                            fontSize: 35, fontWeight: FontWeight.bold)),
-                    Material(
+            Padding(
+              padding: EdgeInsets.fromLTRB(10, 30, 10, 30),
+              child: TextField(
+                cursorColor: Color(0xff9D63E5),
+                decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(50),
-                      color: Colors.red[900],
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(50),
-                        onTap: () => Get.toNamed(Routes.PROFILE),
-                        child: Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: Icon(
-                            Icons.person,
-                            size: 35,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
+                      borderSide:
+                          BorderSide(color: Color(0xff9D63E5), width: 1)),
+                  fillColor: Colors.white,
+                  filled: true,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50),
+                      borderSide: BorderSide(color: Colors.white, width: 1)),
+                  hintText: "Search new therapist here",
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                  suffixIcon: InkWell(
+                    child: Icon(
+                      Icons.search,
+                      color: Color(0xff9D63E5),
                     ),
-                  ],
+                    onTap: () {},
+                  ),
                 ),
               ),
             ),
             Expanded(
-              child: ListView.builder(
+              child: GridView.builder(
                 padding: EdgeInsets.zero,
                 itemCount: myChats.length,
                 itemBuilder: (context, index) => myChats[index],
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
               ),
             ),
           ],
