@@ -59,7 +59,7 @@ class IntroductionView extends GetView<IntroductionController> {
       skip: const Icon(Icons.skip_next),
       next: const Text("Next"),
       done: const Text("Login", style: TextStyle(fontWeight: FontWeight.w700)),
-      onDone: () => Get.offAllNamed(Routes.LOGIN),
+      onDone: () => Get.offAllNamed(Routes.HOME),
       dotsDecorator: DotsDecorator(
         size: const Size.square(10.0),
         activeSize: const Size(20.0, 10.0),
