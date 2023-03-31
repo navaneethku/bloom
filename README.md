@@ -14,4 +14,4 @@ The app is designed to be user-friendly and accessible to people of all ages, ra
 The therapy chat app aligns with SDG 3 - Good Health and Well-being, which aims to ensure healthy lives and promote well-being for all at all ages, with specific targets related to mental health.
 
 ## Usage
-To use the therapy chat app, simply download the app from the App Store or Google Play, create an account, and answer a few questions about your mental health needs and preferences. The app will then use a matching algorithm to pair you with a licensed mental health professional who can provide personalized therapy services through chat.
+To use the therapy chat app, simply download the apk. The app will then use a matching algorithm to pair you with a licensed mental health professional who can provide personalized therapy services through chat.
