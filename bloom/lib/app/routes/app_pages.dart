@@ -8,10 +8,16 @@ import '../modules/introduction/bindings/introduction_binding.dart';
 import '../modules/introduction/views/introduction_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/payment/bindings/payment_binding.dart';
+import '../modules/payment/views/payment_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
+import '../modules/ready_msg/bindings/ready_msg_binding.dart';
+import '../modules/ready_msg/views/ready_msg_view.dart';
 import '../modules/search/bindings/search_binding.dart';
 import '../modules/search/views/search_view.dart';
+import '../modules/waiting_for_therapist/bindings/waiting_for_therapist_binding.dart';
+import '../modules/waiting_for_therapist/views/waiting_for_therapist_view.dart';
 
 part 'app_routes.dart';
 
@@ -50,6 +56,21 @@ class AppPages {
       name: _Paths.SEARCH,
       page: () => SearchView(),
       binding: SearchBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAYMENT,
+      page: () => const PaymentView(),
+      binding: PaymentBinding(),
+    ),
+    GetPage(
+      name: _Paths.READY_MSG,
+      page: () => const ReadyMsgView(),
+      binding: ReadyMsgBinding(),
+    ),
+    GetPage(
+      name: _Paths.WAITING_FOR_THERAPIST,
+      page: () => const WaitingForTherapistView(),
+      binding: WaitingForTherapistBinding(),
     ),
   ];
 }

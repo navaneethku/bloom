@@ -25,7 +25,16 @@ class HomeView extends GetView<HomeController> {
               ),
               Text("John Doe"),
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                Text("Chat"),
+                InkWell(
+                  onTap: () => Get.toNamed(Routes.PAYMENT),
+                  child: Text(
+                    "Chat",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xff9D63E5),
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -92,11 +101,6 @@ class HomeView extends GetView<HomeController> {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.toNamed(Routes.SEARCH),
-        child: Icon(Icons.search, size: 30),
-        backgroundColor: Colors.blue,
       ),
     );
   }

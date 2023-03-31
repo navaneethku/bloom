@@ -9,6 +9,9 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const CHAT_ROOM = _Paths.CHAT_ROOM;
   static const SEARCH = _Paths.SEARCH;
+  static const PAYMENT = _Paths.PAYMENT;
+  static const READY_MSG = _Paths.READY_MSG;
+  static const WAITING_FOR_THERAPIST = _Paths.WAITING_FOR_THERAPIST;
 }
 
 abstract class _Paths {
@@ -19,4 +22,7 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const CHAT_ROOM = '/chat-room';
   static const SEARCH = '/search';
+  static const PAYMENT = '/payment';
+  static const READY_MSG = '/ready-msg';
+  static const WAITING_FOR_THERAPIST = '/waiting-for-therapist';
 }
